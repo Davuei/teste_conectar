@@ -1,0 +1,7 @@
+.mainTable {
+  width: 80%;
+  background-color: var(--cinza-escuro);
+}
+.mainTable th {
+  text-align: left;
+}
