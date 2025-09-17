@@ -1,4 +1,4 @@
-import { MainTable } from "../../components/MainTable/MainTable"
+import { PIBTable } from "../../components/PIBTable/PIBTable"
 import { PageContainer } from "../../components/PageContainer/PageContainer"
 
 export function TabelaPIB() {
@@ -7,7 +7,7 @@ export function TabelaPIB() {
       <PageContainer>
         <p>TabelaPIB</p>
 
-        <MainTable />
+        <PIBTable />
       </PageContainer>
     </>
   )
