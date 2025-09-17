@@ -1,7 +1,38 @@
 .mainTable {
-  width: 80%;
-  background-color: var(--cinza-escuro);
+  width: 70%;
+  max-width: 70rem;
+  font-family: 'Fredoka', sans-serif;
+  border-collapse: collapse;
 }
+
 .mainTable th {
   text-align: left;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--branco);
+  background-color: var(--verde-escuro);
+}
+
+.mainTable td {
+  background-color: var(--verde-claro);
+}
+
+.mainTable td, .mainTable th {
+  padding: 0.4rem;
+}
+
+/*  RESPONSIVITY  */
+
+@media(max-width: 500px) {
+  .mainTable {
+    width: 90%;
+  }
+
+  .mainTable th {
+    font-size: 1rem;
+  }
+
+  .mainTable td {
+    font-size: 0.8rem;
+  }
 }

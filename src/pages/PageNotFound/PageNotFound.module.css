@@ -1,0 +1,32 @@
+.divPageNotFound {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1.2rem;
+}
+
+.divImagem img {
+  width: 12rem;
+}
+
+.divTexto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/*  RESPONSIVITY  */
+
+@media(max-width: 500px) {
+  .divPageNotFound {
+    flex-direction: column;
+  }
+
+  .divImagem img {
+    width: 8rem;
+  }
+}

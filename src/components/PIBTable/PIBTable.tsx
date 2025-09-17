@@ -7,6 +7,7 @@ import styles from './PIBTable.module.css';
 import { useEffect, useState } from 'react';
 import { fetchPIBTodo } from '../../services/tabelaServices';
 import type { AnoPIBModel } from '../../models/AnoPIBModel';
+import { ConverterParaDolar } from '../../utils/ConverterParaDolar';
 
 export function PIBTable() {
   // State que armazena o objeto retornado pela API
@@ -28,20 +29,26 @@ export function PIBTable() {
     <table className={ styles.mainTable }>
       <thead>
         <tr>
-          <th>Ano</th>
-          <th>PIB (em dólares)</th>
-          <th>PIB per capita (em dólares)</th>
+          <th aria-label='Ano'>Ano</th>
+          <th aria-label='PIB em milhões de dólares'>PIB (em milhões de dólares)</th>
+          <th aria-label='PIB per capita em dólares'>PIB per capita (em dólares)</th>
         </tr>
       </thead>
 
       <tbody>
         {
           Object.entries(anoPIB).map(([ano, PIB], index) => {
+            const pibReal = `${PIB}`;
+            const pibPerCapitaReal = Object.values(pibPerCapita)[index];
+
+            const pibDolar = ConverterParaDolar(ano, pibReal);
+            const pibPerCapitaDolar = ConverterParaDolar(ano, `${pibPerCapitaReal}`)
+            
             return(
               <tr key={ ano }>
-                <td>{ ano }</td>
-                <td>{ `${PIB}` }</td>
-                <td>{ `${Object.values(pibPerCapita)[index]}` }</td>
+                <td aria-label={ ano }>{ ano }</td>
+                <td aria-label={ `$ ${ pibDolar }` }>{ `$ ${ pibDolar }` }</td>
+                <td aria-label={ `$ ${ pibPerCapitaDolar }` }>{ `$ ${ pibPerCapitaDolar }` }</td>
               </tr>
             )
           })

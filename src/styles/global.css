@@ -4,3 +4,40 @@
 	box-sizing: border-box;
 	background-color: var(--amarelo);
 }
+
+h1 {
+	font-size: 2.4rem;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 550;
+	font-family: 'Fredoka', sans-serif;
+}
+
+p {
+	font-size: 1.2rem;
+	font-weight: 550;
+	font-family: 'Fredoka', sans-serif;
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+/*  RESPONSIVITY  */
+
+@media(max-width: 500px) {
+  h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+}

@@ -1,7 +1,8 @@
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { GraficoPIB } from "../../pages/GraficoPIB/GraficoPIB";
 import { TabelaPIB } from "../../pages/TabelaPIB/TabelaPIB";
 import { useEffect } from "react";
+import { PageNotFound } from "../../pages/PageNotFound/PageNotFound";
 
 export function MainRouter() {
   // Objeto com as rotas das páginas existentes e os títulos da página correspondentes
@@ -29,8 +30,10 @@ export function MainRouter() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={ <Navigate to='/grafico' replace/> } />
         <Route path='/grafico' element={ <GraficoPIB /> } />
         <Route path='/tabela' element={ <TabelaPIB /> } />
+        <Route path='*' element={ <PageNotFound /> } />
       </Routes>
 
       <ChangePage />
