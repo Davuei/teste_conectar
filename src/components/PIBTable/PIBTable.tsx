@@ -4,31 +4,25 @@ import styles from './PIBTable.module.css';
 
 /*  COMPONENTS  */
 
-import { useEffect, useState } from 'react';
-import { fetchPIBTodo } from '../../services/PIBServices';
-import type { AnoPIBModel } from '../../models/AnoPIBModel';
+import { useContext } from 'react';
 import { ConverterParaDolar } from '../../utils/ConverterParaDolar';
+import { PIBContext } from '../../context/PIBContext';
 
 /*
   Componente que retorna a tabela com o PIB e o PIB per capita
 */
 
 export function PIBTable() {
-  // State que armazena o objeto retornado pela API
-  const [anoPIB, setAnoPIB] = useState<AnoPIBModel[]>([]);
-  const [pibPerCapita, setPibPerCapita] = useState<AnoPIBModel[]>([]);
+  // Context com os dados do PIB e do PIB per capita
+  const {PIB, PIBPerCapita} = useContext(PIBContext);
 
-  // useEffect que faz a requisição dos dados à API quando o componente é renderizado
-  useEffect(() => {
-    async function getPIBTodo() {
-      const pibTodo = await fetchPIBTodo();
-
-      setAnoPIB(pibTodo[0].resultados[0].series[0].serie);
-      setPibPerCapita(pibTodo[1].resultados[0].series[0].serie);
-    }
-    getPIBTodo();
-  }, []);
-
+  // Formata os dados do PIB e do PIB per capita para facilitar a iteração e exibição dos dados na tabela
+  const formatedPIBAll = {
+    ano: Object.keys(PIB),
+    PIB: Object.values(PIB),
+    PIBPerCapita: Object.values(PIBPerCapita)
+  }
+  
   return (
     <table className={ styles.mainTable }>
       <thead>
@@ -41,18 +35,18 @@ export function PIBTable() {
 
       <tbody>
         {
-          Object.entries(anoPIB).map(([ano, PIB], index) => {
-            const pibReal = `${PIB}`;
-            const pibPerCapitaReal = Object.values(pibPerCapita)[index];
+          formatedPIBAll.ano.map((ano, index) => {
+            const pibReal = `${ formatedPIBAll.PIB[index] }`; // Guarda o valor do PIB em reais
+            const pibPerCapitaReal = `${ formatedPIBAll.PIBPerCapita[index] }` // Guarda o valor do PIB per capita em reais
 
-            const pibDolar = ConverterParaDolar(ano, pibReal);
-            const pibPerCapitaDolar = ConverterParaDolar(ano, `${pibPerCapitaReal}`)
-            
-            return(
-              <tr key={ ano }>
-                <td aria-label={ ano }>{ ano }</td>
-                <td aria-label={ `$ ${ pibDolar }` }>{ `$ ${ pibDolar }` }</td>
-                <td aria-label={ `$ ${ pibPerCapitaDolar }` }>{ `$ ${ pibPerCapitaDolar }` }</td>
+            const pibDolar = ConverterParaDolar(ano, pibReal); // Guarda o valor do PIB em dólares
+            const pibPerCapitaDolar = ConverterParaDolar(ano, pibPerCapitaReal); // Guarda o valor do PIB per capita em dólares
+
+            return (
+              <tr key={ano}>
+                <td aria-label={ `${ano}` }>{ `${ano}` }</td>
+                <td aria-label={ `$ ${pibDolar}` }>{ `$ ${pibDolar}` }</td>
+                <td aria-label={ `$ ${pibPerCapitaDolar}` }>{ `$ ${pibPerCapitaDolar}` }</td>
               </tr>
             )
           })

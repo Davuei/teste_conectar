@@ -1,3 +1,7 @@
+/*  STYLES  */
+
+import styles from './LineGraph.module.css';
+
 /*  COMPONENTS  */
 
 import { Line } from 'react-chartjs-2'
@@ -11,9 +15,9 @@ import {
 	Tooltip, 
 	Legend 
 } from 'chart.js'
-import { useEffect, useState } from 'react';
-import { fetchPIB } from '../../services/PIBServices';
+import { useContext } from 'react';
 import { ConverterParaDolarFloor } from '../../utils/ConverterParaDolarFloor';
+import { PIBContext } from '../../context/PIBContext';
 
 /*
 	Componente que retorna o gráfico de linhas com o PIB e o PIB per capita
@@ -30,40 +34,62 @@ export function LineGraph() {
 		Legend
 	);
 
-	const [pibChart, setPibChart] = useState<{ [ano: string]: string }>({});
+	// Context com os dados do PIB e do PIB per capita
+	const {PIB, PIBPerCapita} = useContext(PIBContext);
 
-	useEffect(() => {
-		async function getPIB() {
-			const resp = await fetchPIB();
-			setPibChart(resp[0].resultados[0].series[0].serie);
-		}
-		getPIB();
-	}, []);
+	// Formata os dados do PIB e do PIB per capita para facilitar a iteração e exibição dos dados na tabela
+  const formatedPIBAll = {
+    ano: Object.keys(PIB),
+    PIB: Object.values(PIB),
+    PIBPerCapita: Object.values(PIBPerCapita)
+  }
 
 	// Array com os anos
-	const chartYears = Object.keys(pibChart);
+	const chartYears = formatedPIBAll.ano;
 
 	// Array com os PIBs em milhões de dólares
-	const formatedData = Object.entries(pibChart).map(p => {
-		return ConverterParaDolarFloor(p[0], p[1]);
+	const chartPIB = formatedPIBAll.ano.map((ano, index) => {
+		return ConverterParaDolarFloor(ano, formatedPIBAll.PIB[index]);
 	});
 
-	// Objeto que será utilizado para a configuração do gráfico e a exibição dos dados
-	const chartData = {
+	// Array com os PIBs per capita em dólares
+	const chartPIBPerCapita = formatedPIBAll.ano.map((ano, index) => {
+		return ConverterParaDolarFloor(ano, formatedPIBAll.PIBPerCapita[index]);
+	});
+
+	// Objeto que será utilizado para a configuração do gráfico do PIB
+	const chartDataPIB = {
 		labels: chartYears,
 		datasets: [
 			{
 				label: 'PIB (em milhões de dólares)',
-				data: formatedData,
+				data: chartPIB,
 				borderColor: '#1BA665',
-				tension: 0.1,
+			},
+		],
+	};
+
+	// Objeto que será utilizado para a configuração do gráfico do PIB per capita
+	const chartDataPIBPerCapita = {
+		labels: chartYears,
+		datasets: [
+			{
+				label: 'PIB per capita (em dólares)',
+				data: chartPIBPerCapita,
+				borderColor: '#F27405',
 			},
 		],
 	};
 
 	return (
-		<>
-			<Line data={chartData} />
-		</>
+		<div className={ styles.lineGraphDiv }>
+			<div className={ styles.graph }>
+				<Line options={ {responsive: true, maintainAspectRatio: false} } data={chartDataPIB} />
+			</div>
+
+			<div className={ styles.graph }>
+				<Line options={ {responsive: true, maintainAspectRatio: false} } data={chartDataPIBPerCapita} />
+			</div>
+		</div>
 	)
 }

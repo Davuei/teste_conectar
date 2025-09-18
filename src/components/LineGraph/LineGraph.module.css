@@ -1,0 +1,31 @@
+.lineGraphDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.graph {
+  width: 60%;
+  min-width: 30rem;
+  max-width: 60rem;
+  height: 25rem;
+  position: relative;
+}
+
+/*  RESPONSIVITY  */
+
+@media(max-width: 1000px) {
+  .graph {
+    height: 18rem;
+  }
+}
+
+@media(max-width: 500px) {
+  .graph {
+    min-width: 18rem;
+    height: 12rem;
+  }
+}

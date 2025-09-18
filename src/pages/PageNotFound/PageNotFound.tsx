@@ -16,7 +16,7 @@ export function PageNotFound() {
           <h1>ERRO 404 - Página não encontrada</h1>
           <h2>Não há nada para ver aqui!</h2>
           <RouterLink href='/grafico'>
-            <p>{ `Ver gráfico com o PIB brasileiro ->` }</p>
+            <p>{ `Ver gráficos com o PIB brasileiro ->` }</p>
           </RouterLink>
 
           <RouterLink href='/tabela'>

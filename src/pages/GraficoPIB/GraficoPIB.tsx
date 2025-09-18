@@ -13,10 +13,10 @@ export function GraficoPIB() {
 		<>
 			<PageContainer>
 				<PageHeader 
-					textH1='Gráfico com a Evolução do PIB Brasileiro' 
+					textH1='Gráficos com a Evolução do PIB Brasileiro' 
 					href='/tabela' 
 					textLink='Ver tabela com o PIB brasileiro ->' 
-					textP='Gráfico que exibe a evolução do PIB brasileiro e do PIB per capita brasileiro' 
+					textP='Gráficos que exibem a evolução do PIB brasileiro e do PIB per capita brasileiro' 
 				/>
 
 				<LineGraph />
