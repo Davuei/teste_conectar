@@ -11,6 +11,10 @@ type RouterLinkProps = {
   children: React.ReactNode
 } & React.ComponentProps<'a'>;
 
+/*
+  Componente que retorna um template de "Link" mais flexível
+*/
+
 export function RouterLink({ href, children, ...props }: RouterLinkProps) {
   return (
     <Link to={ href } className={ styles.routerLinkClass } {...props} >

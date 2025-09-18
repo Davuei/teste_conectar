@@ -13,6 +13,10 @@ type PageHeaderProps = {
   textP: string
 }
 
+/*
+  Componente com um template que contém um título, um hiperlink e uma descrição
+*/
+
 export function PageHeader({ textH1, textLink, href, textP }: PageHeaderProps) {
   return (
     <header className={ styles.pageHeader }>

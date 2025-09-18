@@ -1,5 +1,6 @@
 import { ENDPOINT_PIB, ENDPOINT_PIB_PER_CAPITA, ENDPOINT_PIB_TODO } from "../environments/environments";
 
+// Busca pelo PIB na API do IBGE
 export const fetchPIB = async () => {
 	try {
 		const resp = await fetch(ENDPOINT_PIB);
@@ -11,6 +12,7 @@ export const fetchPIB = async () => {
 	}
 }
 
+// Busca pelo PIB per capita na API do IBGE
 export const fetchPIBPerCapita = async () => {
 	try {
 		const resp = await fetch(ENDPOINT_PIB_PER_CAPITA);
@@ -22,6 +24,7 @@ export const fetchPIBPerCapita = async () => {
 	}
 }
 
+// Busca pelo PIB e pelo PIB per capita na API do IBGE
 export const fetchPIBTodo = async () => {
 	try {
 		const resp = await fetch(ENDPOINT_PIB_TODO);

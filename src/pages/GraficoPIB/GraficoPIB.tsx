@@ -4,6 +4,7 @@
 
 /*  COMPONENTS  */
 
+import { LineGraph } from "../../components/LineGraph/LineGraph";
 import { PageContainer } from "../../components/PageContainer/PageContainer";
 import { PageHeader } from "../../components/PageHeader/PageHeader";
 
@@ -17,6 +18,8 @@ export function GraficoPIB() {
 					textLink='Ver tabela com o PIB brasileiro ->' 
 					textP='Gráfico que exibe a evolução do PIB brasileiro e do PIB per capita brasileiro' 
 				/>
+
+				<LineGraph />
 			</PageContainer>
 		</>
 	)

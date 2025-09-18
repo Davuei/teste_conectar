@@ -5,9 +5,13 @@ import styles from './PIBTable.module.css';
 /*  COMPONENTS  */
 
 import { useEffect, useState } from 'react';
-import { fetchPIBTodo } from '../../services/tabelaServices';
+import { fetchPIBTodo } from '../../services/PIBServices';
 import type { AnoPIBModel } from '../../models/AnoPIBModel';
 import { ConverterParaDolar } from '../../utils/ConverterParaDolar';
+
+/*
+  Componente que retorna a tabela com o PIB e o PIB per capita
+*/
 
 export function PIBTable() {
   // State que armazena o objeto retornado pela API
