@@ -55,3 +55,7 @@ Agora para uma parte mais técnica, as tecnologias utilizadas no desenvolvimento
 
 * Chart.JS
   - O [Chart.JS](https://www.npmjs.com/package/chart.js), juntamente com a biblioteca [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2), formam uma opção simples, fácil de utilizar e robusta para a exibição de dados em gráficos.
+
+## 🚀Link para o deploy
+
+A aplicação está disponível online através do link [teste-conectar](https://teste-conectar-q3jli7jl5-davis-projects-9a398acf.vercel.app/grafico). Obrigado pelo seu tempo!
