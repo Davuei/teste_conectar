@@ -48,7 +48,7 @@ Agora para uma parte mais técnica, as tecnologias utilizadas no desenvolvimento
 
 * CSS Modules
   - Opção mais segura para a estilização de componentes do React.JS, uma vez que sua funcionalidade de Single Page Application pode fazer com que arquivos CSS de outros componentes causem resultados indesejados (aplicar estilizações em toda a página).
-  - O uso de CSS puro foi utilizado apenas em arquivos de estilização cujo objetivo era estilizar a página como um topo.
+  - O uso de CSS puro foi utilizado apenas em arquivos de estilização cujo objetivo era estilizar a página como um todo.
 
 * React Router Dom
   - A biblioteca [react-router-dom](https://www.npmjs.com/package/react-router-dom) foi utilizada para configurar a navegação da aplicação, como as rotas possíveis, lidar com rotas que não existem e alterar o título da página.
