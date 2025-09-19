@@ -56,6 +56,15 @@ Agora para uma parte mais técnica, as tecnologias utilizadas no desenvolvimento
 * Chart.JS
   - O [Chart.JS](https://www.npmjs.com/package/chart.js), juntamente com a biblioteca [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2), formam uma opção simples, fácil de utilizar e robusta para a exibição de dados em gráficos.
 
+### Decisões adicionais
+
+* Uso de duas tabelas ao invés de uma
+  - Para a tela de gráfico, o documento com as instruções para o desenvolvimento da aplicação solicitava apenas um gráfico de linhas com os dados do PIB e do PIB per capita, diferenciados apenas por cores. Entretanto, por causa dos valores muito distintos entre esses dados, a fim de proporcionar uma visibilidade menos ambígua das informações, o PIB e o PIB per capita foram exibidos em gráficos diferentes, um em baixo do outro.
+
+* Uso das unidades
+  - Para a exibição dos dados do PIB total foi utilizada a medida milhões de dólares. Como os dados enviados pela API do IBGE eram em milhões de reais, o uso de milhões de dólares permitia uma visibilidade menos poluída dos dados (sem a presença de muitos zeros apenas para explicitar que os valores estavam nas casas dos milhões).
+  - Essas informações estão descritas tanto no gráfico quanto na tabela.
+
 ## 🚀Link para o deploy
 
 A aplicação está disponível online através do link [teste-conectar](https://teste-conectar.vercel.app/). Obrigado pelo seu tempo!
