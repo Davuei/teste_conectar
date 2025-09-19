@@ -12,7 +12,7 @@ export function TabelaPIB() {
           textH1='Tabela do PIB Brasileiro Por Ano' 
           href='/grafico' 
           textLink='Ver gráficos com o PIB brasileiro ->' 
-          textP='Tabela com o ano, o PIB brasileiro em dólares e o PIB per capita brasileiro em dólares' 
+          textP='Tabela com o ano, o PIB brasileiro e o PIB per capita brasileiro' 
         />
 
         <PIBTable />
