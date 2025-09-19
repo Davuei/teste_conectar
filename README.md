@@ -1,4 +1,4 @@
-# 📈 Teste para Desenvolvedor Júnior - Conéctar
+# 📈 Teste para Desenvolvedor Frontend - Conéctar
 
 Este projeto consiste em uma aplicação web simples cujo objetivo é demonstrar minhas habilidades com React.JS, juntamente com o consumo da API do IBGE para a exibição dos dados em gráficos e tabelas, e consiste em duas telas principais:
 
