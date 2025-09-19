@@ -3,10 +3,10 @@
 Este projeto consiste em uma aplicação web simples cujo objetivo é demonstrar minhas habilidades com React.JS, juntamente com o consumo da API do IBGE para a exibição dos dados em gráficos e tabelas, e consiste em duas telas principais:
 
 * Tela 1 - Gráfico de evolução do PIB
- - Nesta tela, é exibida a evolução do PIB brasileiro (em dólares) e a evolução do PIB per capita brasileiro (em dólares) ao longo dos anos.
+  - Nesta tela, é exibida a evolução do PIB brasileiro (em dólares) e a evolução do PIB per capita brasileiro (em dólares) ao longo dos anos.
 
 * Tela 2 - Tabela de PIB por ano
- - Nesta tela, é exibida uma tabela com o ano, o PIB total (em dólares) e o PIB per capita (em dólares).
+  - Nesta tela, é exibida uma tabela com o ano, o PIB total (em dólares) e o PIB per capita (em dólares).
 
 ## 🔧 Instruções de instalação e execução do projeto
 
@@ -31,10 +31,10 @@ Para instalar e executar localmente o projeto, é necessário instalar anteriorm
 ### Design
 
 * Paleta de cores e fontes de texto
- - As cores e fontes de texto utilizadas na aplicação foram baseadas na paleta de cores e nas fontes da página principal do site oficial da Conéctar, que pode ser encontrado [aqui](https://www.conectarapp.com.br/).
+  - As cores e fontes de texto utilizadas na aplicação foram baseadas na paleta de cores e nas fontes da página principal do site oficial da Conéctar, que pode ser encontrado [aqui](https://www.conectarapp.com.br/).
 
 * Layout da aplicação
- - Para o design da aplicação, foi utilizada uma abordagem simples e minimalista, dado o prazo para o desenvolvimento da aplicação.
+  - Para o design da aplicação, foi utilizada uma abordagem simples e minimalista, dado o prazo para o desenvolvimento da aplicação.
 
 ### Tecnologias utilizadas
 
