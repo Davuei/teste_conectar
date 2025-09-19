@@ -31,10 +31,10 @@ Para instalar e executar localmente o projeto, é necessário instalar anteriorm
 ### Design
 
 * Paleta de cores e fontes de texto
-As cores e fontes de texto utilizadas na aplicação foram baseadas na paleta de cores e nas fontes da página principal do site oficial da Conéctar, que pode ser encontrado [aqui](https://www.conectarapp.com.br/).
+ - As cores e fontes de texto utilizadas na aplicação foram baseadas na paleta de cores e nas fontes da página principal do site oficial da Conéctar, que pode ser encontrado [aqui](https://www.conectarapp.com.br/).
 
 * Layout da aplicação
-Para o design da aplicação, foi utilizada uma abordagem simples e minimalista, dado o prazo para o desenvolvimento da aplicação.
+ - Para o design da aplicação, foi utilizada uma abordagem simples e minimalista, dado o prazo para o desenvolvimento da aplicação.
 
 ### Tecnologias utilizadas
 
